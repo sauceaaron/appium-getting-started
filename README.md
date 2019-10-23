@@ -3,9 +3,11 @@
 ## Sample App
 https://github.com/saucelabs/sample-app-mobile
 
+### Download the Sample App 
+https://github.com/saucelabs/sample-app-mobile/releases
+
 ### Upload IOS app to sauce storage
     curl -u $SAUCE_USERNAME:$SAUCE_ACCESS_KEY -H "Content-Type: application/octet-stream" -X POST https://saucelabs.com/rest/v1/storage/$SAUCE_USERNAME/SwagLabs.app.zip?overwrite=true --data-binary @src/main/resources/SwagLabs.app.zip
-
 
 ### Upload Android app to sauce storage
     curl -u $SAUCE_USERNAME:$SAUCE_ACCESS_KEY \
