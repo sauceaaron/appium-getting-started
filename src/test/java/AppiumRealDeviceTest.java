@@ -67,18 +67,18 @@ public class AppiumRealDeviceTest
 //		driver.findElementByAccessibilityId("test-Password").sendKeys("invalid_password");
 //		driver.findElementByAccessibilityId("test-LOGIN").click();
 
-		WebDriverWait wait = new WebDriverWait(driver, 60);
 		By usernameField = MobileBy.AccessibilityId("test-Username");
 		By passwordField = MobileBy.AccessibilityId("test-Password");
 		By loginButton = MobileBy.AccessibilityId("test-LOGIN");
 
-		wait.until(presenceOfElementLocated(usernameField)).sendKeys("standard_user");
-		wait.until(presenceOfElementLocated(passwordField)).sendKeys("invalid_password");
-		wait.until(elementToBeClickable(loginButton)).click();
+		driver.findElement(usernameField).sendKeys("standard_user");
+		driver.findElement(passwordField).sendKeys("invalid_password");
+		driver.findElement(loginButton).click();
 
 		String expectedErrorMessage = "Username and password do not match any user in this service.";
 		By errorDialog = MobileBy.AccessibilityId(expectedErrorMessage);
 
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		String message = wait.until(presenceOfElementLocated(errorDialog)).getText();
 		System.out.println(message);
 		assertThat(message).isEqualTo(expectedErrorMessage);
