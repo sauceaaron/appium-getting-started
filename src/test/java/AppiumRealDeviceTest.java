@@ -55,14 +55,6 @@ public class AppiumRealDeviceTest
 	@Test
 	public void loginFailureTest()
 	{
-//		MobileElement el1 = (MobileElement) driver.findElementByAccessibilityId("test-Username");
-//		el1.sendKeys("standard_user");
-//		MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("test-Password");
-//		el2.sendKeys("invalid_password");
-//		MobileElement el3 = (MobileElement) driver.findElementByAccessibilityId("test-LOGIN");
-//		el3.click();
-//		MobileElement el4 = (MobileElement) driver.findElementByAccessibilityId("Username and password do not match any user in this service.");
-
 //		driver.findElementByAccessibilityId("test-Username").sendKeys("standard_user");
 //		driver.findElementByAccessibilityId("test-Password").sendKeys("invalid_password");
 //		driver.findElementByAccessibilityId("test-LOGIN").click();

@@ -4,10 +4,9 @@ import org.junit.runner.Description;
 
 public class SauceTestWatcher extends TestWatcher
 {
-	private SauceREST api;
-	private String sessionId;
-
-	public boolean verbose;
+	public SauceREST api;
+	public String sessionId;
+	public boolean verbose = true;
 
 	public SauceTestWatcher(String username, String accessKey)
 	{
@@ -22,20 +21,19 @@ public class SauceTestWatcher extends TestWatcher
 	protected void succeeded(Description description)
 	{
 		api.jobPassed(sessionId);
+		printSessionId(description);
 	}
 
 	protected void failed(Throwable e, Description description)
 	{
 		api.jobFailed(sessionId);
+		printSessionId(description);
 	}
 
 	private void printSessionId(Description description)
 	{
 		if (verbose)
 		{
-			description.getClassName();
-			description.getMethodName();
-
 			String message = "SauceOnDemandSessionID=" + sessionId +
 					" job-name= " + description.getClassName() + " " + description.getDisplayName();
 			System.out.println(message);
