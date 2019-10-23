@@ -1,11 +1,7 @@
-import com.saucelabs.saucerest.SauceREST;
-import junit.framework.AssertionFailedError;
-import junit.framework.TestListener;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.TestWatcher;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
